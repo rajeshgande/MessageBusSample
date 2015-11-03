@@ -71,6 +71,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MedicationDispensed.cs" />
     <Compile Include="PatientAdded.cs" />
     <Compile Include="PatientAddedConsumer.cs" />
     <Compile Include="Program.cs" />

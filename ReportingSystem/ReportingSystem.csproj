@@ -71,9 +71,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MedicationDispensed.cs" />
     <Compile Include="PatientAdded.cs" />
+    <Compile Include="PatientCountResponse.cs" />
+    <Compile Include="PatientCountResponseImpl.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RequestPatientCount.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -13,6 +13,7 @@ namespace CP
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("-----Central Pharmacy System --------");
             Log4NetLogger.Use();
             var bus = Bus.Factory.CreateUsingRabbitMq(cfg =>
             {
@@ -24,6 +25,8 @@ namespace CP
                 cfg.ReceiveEndpoint(host, "cp_queue", e =>
                 {
                     e.Consumer<PatientAddedConsumer>();
+                    e.Handler<MedicationDispensed>(
+                      context => Console.Out.WriteLineAsync($"Medication '{context.Message.Name}' dispensed at {context.Message.Timestamp}"));
                 });
             });
 

@@ -71,7 +71,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contracts\MedicationDispensed.cs" />
+    <Compile Include="Contracts\MedicationDispensedImpl.cs" />
     <Compile Include="Contracts\PatientAdded.cs" />
+    <Compile Include="Contracts\PatientAddedImpl.cs" />
+    <Compile Include="Contracts\PatientCountResponse.cs" />
+    <Compile Include="Contracts\PatientCountResponseImpl.cs" />
+    <Compile Include="Contracts\RequestPatientCount.cs" />
+    <Compile Include="Contracts\RequestPatientCountImpl.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PatientAddedConsumer.cs" />

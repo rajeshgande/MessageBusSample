@@ -10,7 +10,8 @@ namespace Publisher
     {
         public async Task Consume(ConsumeContext<PatientAdded> context)
         {
-            await Console.Out.WriteLineAsync($"Patinet Added: {context.Message.PatientName}");
+            await Console.Out.WriteLineAsync(
+                                $"Patient '{context.Message.PatientName}' added at {context.Message.Timestamp}");
         }
     }
 }

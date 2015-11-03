@@ -11,6 +11,7 @@ namespace ReportingSystem
 {
     class Program
     {
+        public static int PatientCount = 0;
         static void Main(string[] args)
         {
             Console.WriteLine("-----Omnicell Reporting System--------");
@@ -25,7 +26,22 @@ namespace ReportingSystem
                 cfg.ReceiveEndpoint(host, "Reporting_queue", e =>
                 {
                     e.Handler<PatientAdded>(
-                        context => Console.Out.WriteLineAsync($"Patient Added: {context.Message.PatientName}"));
+                        context =>
+                        {
+                            PatientCount++;
+                            return Console.Out.WriteLineAsync(
+                                $"Patient '{context.Message.PatientName}' added at {context.Message.Timestamp}");
+                        });
+                    e.Handler<RequestPatientCount>(
+                       context =>
+                       {
+                           Console.WriteLine("Patient Count Requested...");
+                           context.Respond<PatientCountResponse>(new PatientCountResponseImpl(PatientCount));
+                           return Console.Out.WriteLineAsync(
+                               $"Returned Patient Count:{PatientCount}");
+                       });
+                    e.Handler<MedicationDispensed>(
+                       context => Console.Out.WriteLineAsync($"Medication '{context.Message.Name}' dispensed at {context.Message.Timestamp}"));
                 });
             });
             var busHandle = bus.Start();

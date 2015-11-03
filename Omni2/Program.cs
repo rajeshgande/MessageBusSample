@@ -25,7 +25,7 @@ namespace Omni2
                 cfg.ReceiveEndpoint(host, "OmniTwo_queue", e =>
                 {
                     e.Handler<PatientAdded>(
-                        context => Console.Out.WriteLineAsync($"Patient Added: {context.Message.PatientName}"));
+                        context => Console.Out.WriteLineAsync($"Patient '{context.Message.PatientName}' added at {context.Message.Timestamp}"));
                 });
             });
             var busHandle = bus.Start();
