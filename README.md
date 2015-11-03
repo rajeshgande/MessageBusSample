@@ -2,7 +2,7 @@ This is a sample code for set of applications demonstrating communication over m
 
 
 
-#RabbittMQ Setup
+#####RabbittMQ Setup
 - Install Erlang. 
   - ([download link}(http://www.erlang.org/download.html))
 - Install RabbitMQ.
