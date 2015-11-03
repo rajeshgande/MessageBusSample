@@ -1,4 +1,4 @@
-This is sample code for set of applications demonstrating communication over message bus using technoloiges rabbitmq and MT. It requires RabbitMQ to be installed. Please follow the instruction below to set up rabbitmq.
+This is a sample code for set of applications demonstrating communication over message bus using technoloiges rabbitmq and MT. It requires RabbitMQ to be installed. Please follow the instruction below to set up rabbitmq.
 
 
 
